@@ -87,7 +87,10 @@
     var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
 
     if (this.affixed != affix) {
-      if (this.unpin != null) this.$element.css('top', '')
+      if (this.unpin != null) {
+        this.$element.css('position', '')
+        this.$element.css('top', '')
+      }
 
       var affixType = 'affix' + (affix ? '-' + affix : '')
       var e         = $.Event(affixType + '.bs.affix')
